@@ -1,7 +1,7 @@
 {
-  "name": "aceoffades-barbershop-backend",
+  "name": "barbershop-webapp",
   "version": "1.0.0",
-  "description": "Backend API for AceOfFades Barbershop using Firebase Firestore",
+  "description": "Webapp for Barbershop template using Firebase Firestore",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
