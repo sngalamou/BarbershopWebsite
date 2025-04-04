@@ -1,6 +1,7 @@
 // server.js - Express server with direct Firestore integration
 const express = require('express');
 const cors = require('cors');
+const path = require('path'); 
 const { initializeApp } = require('firebase/app');
 const { 
   getFirestore, 
@@ -482,14 +483,12 @@ const dbService = {
 // Initialize express app
 const expressApp = express();
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 // Middleware
 expressApp.use(cors());
 expressApp.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+expressApp.use(express.static(path.join(__dirname, 'public')));
 
 // Simple logging middleware
 expressApp.use((req, res, next) => {
@@ -497,8 +496,19 @@ expressApp.use((req, res, next) => {
   next();
 });
 
-// Handle all other routes by serving index.html
-expressApp.get('*', (req, res) => { res.sendFile(path.join(__dirname, 'public', 'index.html')); });
+// Catch-all route to serve index.html for client-side routing
+expressApp.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Error handling middleware
+expressApp.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ 
+    error: 'Internal server error', 
+    message: err.message 
+  });
+});
 
 // Routes
 
@@ -828,4 +838,4 @@ expressApp.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
 
-module.exports = expressApp; // Export for testing
+module.exports = expressApp; // Export for testing/for Netlify serverless functions
