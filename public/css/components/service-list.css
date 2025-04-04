@@ -1,0 +1,158 @@
+/* Service List Component Styles */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.service-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.service-duration {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-cta {
+    text-align: center;
+}
+
+.service-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.services-list {
+    margin-top: 2rem;
+}
+
+.service-category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-item-info {
+    flex: 1;
+}
+
+.service-item-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.service-item-description {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.service-item-meta {
+    text-align: right;
+    padding-left: 1rem;
+}
+
+.service-item-price {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.service-item-duration {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .service-item-meta {
+        text-align: left;
+        padding-left: 0;
+        margin-top: 0.5rem;
+    }
+}

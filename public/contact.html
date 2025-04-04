@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Classic Cuts Barbershop</title>
+    <meta name="description" content="Get in touch with Classic Cuts Barbershop. Find our location, hours, and contact information.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Find Us</h2>
+                        <address>
+                            <p><strong>Address:</strong><br>
+                            123 Main Street<br>
+                            Anytown, ST 12345</p>
+                            
+                            <p><strong>Phone:</strong><br>
+                            (555) 123-4567</p>
+                            
+                            <p><strong>Email:</strong><br>
+                            info@classiccuts.com</p>
+                        </address>
+                        
+                        <div class="hours">
+                            <h3>Hours of Operation</h3>
+                            <ul>
+                                <li><strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM</li>
+                                <li><strong>Saturday:</strong> 8:00 AM - 5:00 PM</li>
+                                <li><strong>Sunday:</strong> Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <h2>Location</h2>
+                        <div class="map-container">
+                            <!-- Map embed will go here -->
+                            <div class="map-placeholder">
+                                <p>Map loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/utils/validation.js"></script>
+</body>
+</html>

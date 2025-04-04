@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Cuts Barbershop | Professional Haircuts & Styling</title>
+    <meta name="description" content="Classic Cuts Barbershop offers professional haircuts, beard trims, and styling services in a relaxed atmosphere.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/staff-cards.css">
+    <link rel="stylesheet" href="css/components/service-list.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Classic Cuts Barbershop</h1>
+                <p>Where style meets tradition</p>
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+            </div>
+        </section>
+
+        <section class="services-preview">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid" id="services-container">
+                    <!-- Services will be loaded here via JavaScript -->
+                    <div class="service-loading">Loading services...</div>
+                </div>
+                <div class="services-cta">
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="barbers-preview">
+            <div class="container">
+                <h2>Meet Our Barbers</h2>
+                <div class="barbers-grid" id="barbers-container">
+                    <!-- Barbers will be loaded here via JavaScript -->
+                    <div class="barber-loading">Loading barbers...</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <p>"Best haircut I've ever had. The attention to detail is amazing!"</p>
+                        <div class="testimonial-author">- Michael R.</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Professional service in a relaxed atmosphere. I won't go anywhere else."</p>
+                        <div class="testimonial-author">- Jason T.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/staff-carousel.js"></script>
+    <script src="js/services/api.js"></script>
+    <script src="js/services/service-service.js"></script>
+    <script src="js/services/staff-service.js"></script>
+</body>
+</html>

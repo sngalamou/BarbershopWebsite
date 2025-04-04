@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management | Classic Cuts Admin</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <div class="container admin-header-container">
+            <div class="admin-logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo.png" alt="Classic Cuts Logo">
+                </a>
+                <h1 class="admin-site-title">Admin Panel</h1>
+            </div>
+            
+            <div class="admin-user-menu">
+                <div class="admin-user-info">Welcome, <span id="admin-name">Admin</span></div>
+                <a href="#" id="logout-btn" class="admin-logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <aside class="admin-sidebar">
+            <div class="admin-nav">
+                <div class="admin-nav-title">Main</div>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt admin-nav-icon"></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <i class="fas fa-calendar-alt admin-nav-icon"></i>Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-cut admin-nav-icon"></i>Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="staff.html" class="active">
+                            <i class="fas fa-users admin-nav-icon"></i>Staff
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="admin-nav-title">Account</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-cog admin-nav-icon"></i>Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout">
+                            <i class="fas fa-sign-out-alt admin-nav-icon"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <div class="admin-content">
+            <div class="admin-content-header">
+                <h1 class="admin-content-title">Staff Management</h1>
+                <a href="#" class="btn btn-primary" id="add-staff-btn">
+                    <i class="fas fa-plus"></i> Add New Staff
+                </a>
+            </div>
+            
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title">All Staff Members</h2>
+                    <div class="admin-search-box">
+                        <input type="text" id="staff-search" placeholder="Search staff...">
+                        <button type="button" id="staff-search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <table class="admin-data-table">
+                    <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="staff-table-body">
+                        <!-- Staff data will be loaded here dynamically -->
+                        <tr>
+                            <td><img src="../assets/images/staff/barber1.jpg" alt="James Wilson" class="admin-staff-thumbnail"></td>
+                            <td>James Wilson</td>
+                            <td>Master Barber</td>
+                            <td>james@classiccuts.com</td>
+                            <td>(555) 123-4567</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="1"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="1"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="1"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/staff/barber2.jpg" alt="Michael Rodriguez" class="admin-staff-thumbnail"></td>
+                            <td>Michael Rodriguez</td>
+                            <td>Senior Barber</td>
+                            <td>michael@classiccuts.com</td>
+                            <td>(555) 234-5678</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="2"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="2"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/staff/barber3.jpg" alt="Robert Johnson" class="admin-staff-thumbnail"></td>
+                            <td>Robert Johnson</td>
+                            <td>Barber & Stylist</td>
+                            <td>robert@classiccuts.com</td>
+                            <td>(555) 345-6789</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="3"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="3"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="3"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Staff Modal -->
+    <div id="staff-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="staff-modal-title">Add New Staff Member</h2>
+            
+            <form id="staff-form">
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="staff-name">Full Name</label>
+                        <input type="text" id="staff-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staff-title">Title/Position</label>
+                        <input type="text" id="staff-title" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staff-email">Email</label>
+                        <input type="email" id="staff-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staff-phone">Phone</label>
+                        <input type="tel" id="staff-phone" name="phone">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="staff-bio">Bio</label>
+                    <textarea id="staff-bio" name="bio" rows="4"></textarea>
+                </div>
+                
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="staff-image">Profile Image</label>
+                        <input type="file" id="staff-image" name="image" accept="image/*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staff-status">Status</label>
+                        <select id="staff-status" name="status" required>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Specialties</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Classic Cuts"> Classic Cuts
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Modern Styles"> Modern Styles
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Beard Styling"> Beard Styling
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Hot Towel Shaves"> Hot Towel Shaves
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Fades"> Fades
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="specialties" value="Hair Design"> Hair Design
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Available Services</label>
+                    <div id="services-checkboxes" class="checkbox-group">
+                        <!-- Service checkboxes will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <h3>Work Schedule</h3>
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <div class="schedule-day-header">
+                            <span>Monday</span>
+                            <label class="switch">
+                                <input type="checkbox" name="schedule_monday_enabled" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="schedule-time">
+                            <div class="form-group">
+                                <label for="monday_start">Start</label>
+                                <input type="time" id="monday_start" name="schedule_monday_start" value="09:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="monday_end">End</label>
+                                <input type="time" id="monday_end" name="schedule_monday_end" value="17:00">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat for other days of the week -->
+                    <div class="schedule-day">
+                        <div class="schedule-day-header">
+                            <span>Tuesday</span>
+                            <label class="switch">
+                                <input type="checkbox" name="schedule_tuesday_enabled" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="schedule-time">
+                            <div class="form-group">
+                                <label for="tuesday_start">Start</label>
+                                <input type="time" id="tuesday_start" name="schedule_tuesday_start" value="09:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="tuesday_end">End</label>
+                                <input type="time" id="tuesday_end" name="schedule_tuesday_end" value="17:00">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Wednesday through Sunday here -->
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancel-staff-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-staff-btn">Save Staff Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/services/api.js"></script>
+    <script src="../js/services/auth-service.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/components/staff-table.js"></script>
+</body>
+</html>

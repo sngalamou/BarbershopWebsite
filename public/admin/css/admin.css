@@ -1,0 +1,1230 @@
+/* Admin Panel Styles */
+
+:root {
+    /* Color variables */
+    --admin-primary: #2c3e50;
+    --admin-secondary: #34495e;
+    --admin-accent: #3498db;
+    --admin-success: #2ecc71;
+    --admin-warning: #f39c12;
+    --admin-danger: #e74c3c;
+    --admin-light: #ecf0f1;
+    --admin-dark: #2c3e50;
+    --admin-text: #333333;
+    --admin-text-light: #ffffff;
+    --admin-border: #ddd;
+    
+    /* Spacing */
+    --admin-spacing-xs: 0.25rem;
+    --admin-spacing-sm: 0.5rem;
+    --admin-spacing-md: 1rem;
+    --admin-spacing-lg: 1.5rem;
+    --admin-spacing-xl: 2rem;
+}
+
+/* Admin Layout */
+.admin-page {
+    background-color: var(--admin-light);
+    min-height: 100vh;
+}
+
+.admin-header {
+    background-color: var(--admin-primary);
+    color: var(--admin-text-light);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--admin-spacing-lg);
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+}
+
+.admin-logo img {
+    height: 30px;
+    margin-right: var(--admin-spacing-md);
+}
+
+.admin-site-title {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.admin-user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.admin-user-info {
+    margin-right: var(--admin-spacing-lg);
+    font-size: 0.9rem;
+}
+
+.admin-logout {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--admin-text-light);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 0.85rem;
+}
+
+.admin-logout:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--admin-text-light);
+}
+
+.admin-main {
+    display: flex;
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+.admin-sidebar {
+    width: 250px;
+    background-color: white;
+    border-right: 1px solid var(--admin-border);
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+    padding: var(--admin-spacing-md) 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-nav-title {
+    padding: 0 var(--admin-spacing-lg);
+    margin: var(--admin-spacing-lg) 0 var(--admin-spacing-xs);
+    color: #95a5a6;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--admin-spacing-lg);
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    padding: var(--admin-spacing-md) var(--admin-spacing-lg);
+    color: var(--admin-text);
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.admin-nav a:hover {
+    background-color: var(--admin-light);
+    color: var(--admin-accent);
+}
+
+.admin-nav a.active {
+    background-color: var(--admin-light);
+    color: var(--admin-accent);
+    border-left: 3px solid var(--admin-accent);
+}
+
+.admin-nav-icon {
+    margin-right: var(--admin-spacing-md);
+    width: 20px;
+    text-align: center;
+    color: #7f8c8d;
+}
+
+.admin-nav a:hover .admin-nav-icon,
+.admin-nav a.active .admin-nav-icon {
+    color: var(--admin-accent);
+}
+
+.admin-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: var(--admin-spacing-xl);
+}
+
+/* Dashboard Styles */
+.admin-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--admin-spacing-xl);
+}
+
+.admin-content-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--admin-dark);
+}
+
+.admin-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.admin-dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--admin-spacing-lg);
+    margin-bottom: var(--admin-spacing-xl);
+}
+
+.admin-stat-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: var(--admin-spacing-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--admin-spacing-lg);
+    font-size: 1.5rem;
+}
+
+.admin-stat-appointments {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.admin-stat-services {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.admin-stat-staff {
+    background-color: rgba(155, 89, 182, 0.1);
+    color: #9b59b6;
+}
+
+.admin-stat-users {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+}
+
+.admin-stat-info h3 {
+    font-size: 1.8rem;
+    margin: 0 0 var(--admin-spacing-xs);
+    font-weight: 700;
+}
+
+.admin-stat-label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Cards & Tables */
+.admin-card {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: var(--admin-spacing-xl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--admin-spacing-lg);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-card-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--admin-dark);
+}
+
+.admin-search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--admin-light);
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+}
+
+.admin-search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0.3rem 0;
+    width: 200px;
+}
+
+.admin-search-box button {
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    cursor: pointer;
+    padding: 0 0 0 0.5rem;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-data-table th {
+    text-align: left;
+    padding: var(--admin-spacing-md);
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: #7f8c8d;
+    border-bottom: 2px solid var(--admin-border);
+}
+
+.admin-data-table td {
+    padding: var(--admin-spacing-md);
+    border-bottom: 1px solid var(--admin-border);
+    color: var(--admin-text);
+}
+
+.admin-data-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.admin-staff-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin-table-actions {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.admin-action-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.admin-action-view {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.admin-action-view:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.admin-action-edit {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.admin-action-edit:hover {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.admin-action-delete {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.admin-action-delete:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.status-inactive {
+    background-color: rgba(189, 195, 199, 0.3);
+    color: #7f8c8d;
+}
+
+.status-scheduled {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.status-confirmed {
+    background-color: rgba(155, 89, 182, 0.1);
+    color: #9b59b6;
+}
+
+.status-completed {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.status-cancelled {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.status-no-show {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+/* Activity List */
+.admin-activity-list {
+    padding: var(--admin-spacing-lg);
+    list-style: none;
+}
+
+.admin-activity-item {
+    display: flex;
+    margin-bottom: var(--admin-spacing-lg);
+    padding-bottom: var(--admin-spacing-lg);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-activity-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.admin-activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--admin-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--admin-spacing-lg);
+    color: var(--admin-accent);
+}
+
+.admin-activity-content {
+    flex: 1;
+}
+
+.admin-activity-title {
+    font-weight: 600;
+    margin-bottom: var(--admin-spacing-xs);
+}
+
+.admin-activity-desc {
+    color: #7f8c8d;
+    margin-bottom: var(--admin-spacing-xs);
+}
+
+.admin-activity-time {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+/* Forms */
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--admin-spacing-lg);
+    margin-bottom: var(--admin-spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--admin-spacing-lg);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--admin-spacing-xs);
+    font-weight: 500;
+}
+
+.form-error {
+    color: var(--admin-danger);
+    margin-top: var(--admin-spacing-xs);
+    font-size: 0.85rem;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--admin-spacing-sm);
+    margin-top: var(--admin-spacing-sm);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: var(--admin-spacing-sm);
+    width: auto;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: var(--admin-accent);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--admin-accent);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--admin-spacing-md);
+    margin-bottom: var(--admin-spacing-lg);
+}
+
+.schedule-day {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: var(--admin-spacing-md);
+}
+
+.schedule-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--admin-spacing-md);
+}
+
+.schedule-time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--admin-spacing-md);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--admin-spacing-md);
+    margin-top: var(--admin-spacing-xl);
+}
+
+/* Calendar Styles */
+.admin-view-options {
+    margin-bottom: var(--admin-spacing-lg);
+}
+
+.admin-view-tabs {
+    display: flex;
+    margin-bottom: var(--admin-spacing-lg);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-view-tab {
+    padding: var(--admin-spacing-md) var(--admin-spacing-lg);
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    border-bottom: 3px solid transparent;
+}
+
+.admin-view-tab.active {
+    color: var(--admin-accent);
+    border-bottom-color: var(--admin-accent);
+}
+
+.admin-view-tab:hover {
+    color: var(--admin-accent);
+}
+
+.admin-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--admin-spacing-md);
+    margin-bottom: var(--admin-spacing-lg);
+}
+
+.admin-filter {
+    display: flex;
+    align-items: center;
+}
+
+.admin-filter label {
+    margin-right: var(--admin-spacing-sm);
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.admin-filter select,
+.admin-filter input {
+    background-color: white;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.date-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: var(--admin-spacing-sm);
+}
+
+.admin-view {
+    display: none;
+}
+
+.admin-view.active {
+    display: block;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--admin-spacing-md);
+}
+
+.calendar-view-options {
+    display: flex;
+    gap: var(--admin-spacing-xs);
+}
+
+.calendar-view-options .btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.calendar-month-view {
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.calendar-header-cell {
+    padding: var(--admin-spacing-md);
+    text-align: center;
+    font-weight: 600;
+    color: #7f8c8d;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    min-height: 100px;
+    border-right: 1px solid var(--admin-border);
+    border-bottom: 1px solid var(--admin-border);
+    padding: var(--admin-spacing-sm);
+}
+
+.calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.calendar-day.empty {
+    background-color: #f9f9f9;
+}
+
+.calendar-day.today {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.calendar-day-header {
+    margin-bottom: var(--admin-spacing-sm);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calendar-day-number {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.calendar-day.today .calendar-day-number {
+    background-color: var(--admin-accent);
+    color: white;
+}
+
+.calendar-appointment {
+    margin-bottom: var(--admin-spacing-xs);
+    padding: var(--admin-spacing-xs);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--admin-accent);
+    border-left: 3px solid var(--admin-accent);
+}
+
+.calendar-appointment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-appointment.status-scheduled {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left-color: #3498db;
+    color: #3498db;
+}
+
+.calendar-appointment.status-confirmed {
+    background-color: rgba(155, 89, 182, 0.1);
+    border-left-color: #9b59b6;
+    color: #9b59b6;
+}
+
+.calendar-appointment.status-completed {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.calendar-appointment.status-cancelled,
+.calendar-appointment.status-no-show {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.calendar-appointment-time {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.calendar-week-view {
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.calendar-week-header {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.calendar-week-header-day {
+    padding: var(--admin-spacing-md);
+    text-align: center;
+    background-color: #f9f9f9;
+    border-left: 1px solid var(--admin-border);
+}
+
+.calendar-week-header-day.today {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.calendar-week-header-day-name {
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.calendar-week-header-day-number {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.calendar-week-body {
+    display: flex;
+}
+
+.calendar-week-time-column {
+    width: 100px;
+}
+
+.calendar-week-time-slot {
+    height: 60px;
+    padding: var(--admin-spacing-xs);
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+.calendar-week-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 60px;
+}
+
+.calendar-week-grid-cell {
+    border-left: 1px solid var(--admin-border);
+    border-bottom: 1px solid var(--admin-border);
+    padding: var(--admin-spacing-xs);
+}
+
+.calendar-day-view {
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.calendar-day-header {
+    padding: var(--admin-spacing-md);
+    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--admin-border);
+    text-align: center;
+}
+
+.calendar-day-date {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.calendar-day-schedule {
+    padding: var(--admin-spacing-md);
+}
+
+.calendar-day-time-slot {
+    display: flex;
+    margin-bottom: var(--admin-spacing-md);
+    padding-bottom: var(--admin-spacing-md);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.calendar-day-time-slot:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.calendar-day-time {
+    width: 80px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.calendar-day-events {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--admin-spacing-sm);
+}
+
+.calendar-day-events .calendar-appointment {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--admin-spacing-sm);
+}
+
+.calendar-appointment-client {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.calendar-appointment-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+/* Login Page */
+.admin-login-page {
+    background-color: var(--admin-light);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--admin-spacing-lg);
+}
+
+.admin-login-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: var(--admin-spacing-xl);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-logo {
+    text-align: center;
+    margin-bottom: var(--admin-spacing-xl);
+}
+
+.admin-login-logo img {
+    height: 60px;
+}
+
+.admin-login-title {
+    text-align: center;
+    margin-bottom: var(--admin-spacing-xl);
+    color: var(--admin-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.admin-login-footer {
+    text-align: center;
+    margin-top: var(--admin-spacing-xl);
+    color: #95a5a6;
+    font-size: 0.85rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: var(--admin-spacing-xl);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: var(--admin-spacing-md);
+    right: var(--admin-spacing-md);
+    font-size: 1.5rem;
+    color: #95a5a6;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--admin-danger);
+}
+
+/* Pagination */
+.admin-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--admin-spacing-md) var(--admin-spacing-lg);
+    border-top: 1px solid var(--admin-border);
+}
+
+.pagination-prev,
+.pagination-next {
+    background: none;
+    border: none;
+    color: var(--admin-accent);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.pagination-prev:disabled,
+.pagination-next:disabled {
+    color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .admin-sidebar {
+        width: 200px;
+    }
+    
+    .admin-content {
+        margin-left: 200px;
+    }
+    
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        position: fixed;
+        left: -250px;
+        z-index: 99;
+        transition: left 0.3s;
+    }
+    
+    .admin-sidebar.open {
+        left: 0;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .admin-header-container {
+        padding: 0 var(--admin-spacing-md);
+    }
+    
+    .admin-user-info {
+        display: none;
+    }
+    
+    .admin-content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--admin-spacing-md);
+    }
+    
+    .admin-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--admin-spacing-md);
+    }
+    
+    .admin-search-box {
+        width: 100%;
+    }
+    
+    .admin-search-box input {
+        width: 100%;
+    }
+    
+    .admin-dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-week-view,
+    .calendar-day-view {
+        overflow-x: auto;
+    }
+    
+    .calendar-week-header {
+        min-width: 800px;
+    }
+    
+    .calendar-week-grid {
+        min-width: 700px;
+    }
+    
+    .calendar-month-view .calendar-day {
+        min-height: 80px;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-content {
+        padding: var(--admin-spacing-md);
+    }
+    
+    .admin-view-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .admin-view-tab {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .admin-filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-filter {
+        width: 100%;
+    }
+    
+    .admin-filter select,
+    .admin-filter input {
+        width: 100%;
+    }
+    
+    .date-range-inputs {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .calendar-view-options {
+        margin-top: var(--admin-spacing-md);
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .form-buttons button {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}

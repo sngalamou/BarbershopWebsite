@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Classic Cuts Admin</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-login-page">
+    <div class="admin-login-container">
+        <div class="admin-login-card">
+            <div class="admin-login-logo">
+                <img src="../assets/images/logo.png" alt="Classic Cuts Logo">
+            </div>
+            
+            <h1 class="admin-login-title">Admin Login</h1>
+            
+            <form id="admin-login-form" class="admin-login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div id="login-error" class="form-error"></div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Log In</button>
+                </div>
+            </form>
+            
+            <div class="admin-login-footer">
+                <p>Classic Cuts Barbershop Admin Panel</p>
+                <p>&copy; 2025 All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/services/api.js"></script>
+    <script src="../js/services/auth-service.js"></script>
+    <script src="../js/utils/validation.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

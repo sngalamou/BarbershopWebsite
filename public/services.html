@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | Classic Cuts Barbershop</title>
+    <meta name="description" content="Explore our range of professional barbering services, from classic haircuts to beard trims and more.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/service-list.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Professional barbering services tailored to your style</p>
+            </div>
+        </section>
+
+        <section class="services-content">
+            <div class="container">
+                <div class="services-list" id="services-list">
+                    <!-- Services will be loaded here via JavaScript -->
+                    <div class="service-loading">Loading services...</div>
+                </div>
+                <div class="services-cta">
+                    <p>Ready to look your best?</p>
+                    <a href="booking.html" class="btn btn-primary">Book an Appointment</a>
+                </div>
+            </div>
+        </section>
+        <section class="services-section">
+            <div class="container">
+              <h2>Our Services</h2>
+              <div class="services-container">
+                <!-- Services will be loaded here via JavaScript -->
+              </div>
+            </div>
+          </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/services/api.js"></script>
+    <script src="js/services/service-service.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

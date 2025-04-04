@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Classic Cuts Admin</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <div class="container admin-header-container">
+            <div class="admin-logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo.png" alt="Classic Cuts Logo">
+                </a>
+                <h1 class="admin-site-title">Admin Panel</h1>
+            </div>
+            
+            <div class="admin-user-menu">
+                <div class="admin-user-info">Welcome, <span id="admin-name">Admin</span></div>
+                <a href="#" id="logout-btn" class="admin-logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <aside class="admin-sidebar">
+            <div class="admin-nav">
+                <div class="admin-nav-title">Main</div>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt admin-nav-icon"></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <i class="fas fa-calendar-alt admin-nav-icon"></i>Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="active">
+                            <i class="fas fa-cut admin-nav-icon"></i>Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="staff.html">
+                            <i class="fas fa-users admin-nav-icon"></i>Staff
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="admin-nav-title">Account</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-cog admin-nav-icon"></i>Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout">
+                            <i class="fas fa-sign-out-alt admin-nav-icon"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <div class="admin-content">
+            <div class="admin-content-header">
+                <h1 class="admin-content-title">Services Management</h1>
+                <a href="#" class="btn btn-primary" id="add-service-btn">
+                    <i class="fas fa-plus"></i> Add New Service
+                </a>
+            </div>
+            
+            <div class="admin-view-options">
+                <div class="admin-view-tabs">
+                    <button class="admin-view-tab active" data-view="all">All Services</button>
+                    <button class="admin-view-tab" data-view="haircut">Haircuts</button>
+                    <button class="admin-view-tab" data-view="beard">Beard</button>
+                    <button class="admin-view-tab" data-view="combo">Combo Packages</button>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title">All Services</h2>
+                    <div class="admin-search-box">
+                        <input type="text" id="service-search" placeholder="Search services...">
+                        <button type="button" id="service-search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <table class="admin-data-table">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Category</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="services-table-body">
+                        <!-- Service data will be loaded dynamically -->
+                        <tr>
+                            <td>Classic Haircut</td>
+                            <td>Haircut</td>
+                            <td>30 mins</td>
+                            <td>$25.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="1"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="1"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="1"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Premium Haircut & Style</td>
+                            <td>Haircut</td>
+                            <td>45 mins</td>
+                            <td>$35.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="2"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="2"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Beard Trim</td>
+                            <td>Beard</td>
+                            <td>15 mins</td>
+                            <td>$15.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="3"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="3"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="3"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Luxury Shave</td>
+                            <td>Beard</td>
+                            <td>30 mins</td>
+                            <td>$30.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="4"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="4"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="4"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Haircut & Beard Combo</td>
+                            <td>Combo</td>
+                            <td>45 mins</td>
+                            <td>$40.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="5"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="5"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="5"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Executive Package</td>
+                            <td>Combo</td>
+                            <td>60 mins</td>
+                            <td>$60.00</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View" data-id="6"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit" data-id="6"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Delete" data-id="6"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="service-modal-title">Add New Service</h2>
+            
+            <form id="service-form">
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="service-name">Service Name</label>
+                        <input type="text" id="service-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-category">Category</label>
+                        <select id="service-category" name="category" required>
+                            <option value="Haircut">Haircut</option>
+                            <option value="Beard">Beard</option>
+                            <option value="Combo">Combo Package</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-duration">Duration (minutes)</label>
+                        <input type="number" id="service-duration" name="duration" min="5" step="5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-price">Price ($)</label>
+                        <input type="number" id="service-price" name="price" min="0" step="0.01" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-description">Description</label>
+                    <textarea id="service-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="service-image">Service Image (optional)</label>
+                        <input type="file" id="service-image" name="image" accept="image/*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-status">Status</label>
+                        <select id="service-status" name="active" required>
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancel-service-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-service-btn">Save Service</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/services/api.js"></script>
+    <script src="../js/services/auth-service.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/components/service-table.js"></script>
+</body>
+</html>

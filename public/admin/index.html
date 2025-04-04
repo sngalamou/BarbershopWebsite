@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Classic Cuts Admin</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <div class="container admin-header-container">
+            <div class="admin-logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo.png" alt="Classic Cuts Logo">
+                </a>
+                <h1 class="admin-site-title">Admin Panel</h1>
+            </div>
+            
+            <div class="admin-user-menu">
+                <div class="admin-user-info">Welcome, <span id="admin-name">Admin</span></div>
+                <a href="#" id="logout-btn" class="admin-logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <aside class="admin-sidebar">
+            <div class="admin-nav">
+                <div class="admin-nav-title">Main</div>
+                <ul>
+                    <li>
+                        <a href="index.html" class="active">
+                            <i class="fas fa-tachometer-alt admin-nav-icon"></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="appointments.html">
+                            <i class="fas fa-calendar-alt admin-nav-icon"></i>Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-cut admin-nav-icon"></i>Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="staff.html">
+                            <i class="fas fa-users admin-nav-icon"></i>Staff
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="admin-nav-title">Account</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-cog admin-nav-icon"></i>Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout">
+                            <i class="fas fa-sign-out-alt admin-nav-icon"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <div class="admin-content">
+            <div class="admin-content-header">
+                <h1 class="admin-content-title">Dashboard</h1>
+                <div class="admin-date" id="current-date"></div>
+            </div>
+            
+            <div class="admin-dashboard-cards">
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon admin-stat-appointments">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="admin-stat-info">
+                        <h3>24</h3>
+                        <div class="admin-stat-label">Appointments Today</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon admin-stat-services">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="admin-stat-info">
+                        <h3>6</h3>
+                        <div class="admin-stat-label">Active Services</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon admin-stat-staff">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="admin-stat-info">
+                        <h3>3</h3>
+                        <div class="admin-stat-label">Staff Members</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon admin-stat-users">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="admin-stat-info">
+                        <h3>142</h3>
+                        <div class="admin-stat-label">Registered Clients</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title">Upcoming Appointments</h2>
+                    <a href="appointments.html" class="btn btn-secondary">View All</a>
+                </div>
+                
+                <table class="admin-data-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Service</th>
+                            <th>Barber</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="upcoming-appointments">
+                        <tr>
+                            <td>John Smith</td>
+                            <td>Classic Haircut</td>
+                            <td>James Wilson</td>
+                            <td>April 4, 2025</td>
+                            <td>10:30 AM</td>
+                            <td>Confirmed</td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Cancel"><i class="fas fa-times"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Michael Johnson</td>
+                            <td>Beard Trim</td>
+                            <td>Robert Johnson</td>
+                            <td>April 4, 2025</td>
+                            <td>11:00 AM</td>
+                            <td>Scheduled</td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Cancel"><i class="fas fa-times"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>David Williams</td>
+                            <td>Premium Haircut & Style</td>
+                            <td>Michael Rodriguez</td>
+                            <td>April 4, 2025</td>
+                            <td>1:30 PM</td>
+                            <td>Confirmed</td>
+                            <td>
+                                <div class="admin-table-actions">
+                                    <a href="#" class="admin-action-btn admin-action-view" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-edit" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="admin-action-btn admin-action-delete" title="Cancel"><i class="fas fa-times"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2 class="admin-card-title">Recent Activity</h2>
+                </div>
+                
+                <ul class="admin-activity-list">
+                    <li class="admin-activity-item">
+                        <div class="admin-activity-icon"><i class="fas fa-calendar-plus"></i></div>
+                        <div class="admin-activity-content">
+                            <div class="admin-activity-title">New Appointment</div>
+                            <div class="admin-activity-desc">John Smith booked a Classic Haircut with James Wilson</div>
+                            <div class="admin-activity-time">15 minutes ago</div>
+                        </div>
+                    </li>
+                    <li class="admin-activity-item">
+                        <div class="admin-activity-icon"><i class="fas fa-user-check"></i></div>
+                        <div class="admin-activity-content">
+                            <div class="admin-activity-title">Appointment Completed</div>
+                            <div class="admin-activity-desc">Michael Johnson's Beard Trim with Robert Johnson was completed</div>
+                            <div class="admin-activity-time">35 minutes ago</div>
+                        </div>
+                    </li>
+                    <li class="admin-activity-item">
+                        <div class="admin-activity-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="admin-activity-content">
+                            <div class="admin-activity-title">New Customer</div>
+                            <div class="admin-activity-desc">David Williams registered an account</div>
+                            <div class="admin-activity-time">1 hour ago</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../js/services/api.js"></script>
+    <script src="../js/services/auth-service.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/components/dashboard.js"></script>
+</body>
+</html>
