@@ -1,7 +1,9 @@
+# Netlify Configuration File
+
 [build]
   command = "npm install"
-  publish = "."
   functions = "functions"
+  publish = "public"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -11,9 +13,21 @@
   to = "/index.html"
   status = 200
 
-[context.production]
-  command = "npm install"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "default-src 'self'"
 
 [dev]
   command = "npm run start"
   port = 3000
+
+# Serverless function for API routes
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server"
+  status = 200
