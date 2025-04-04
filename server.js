@@ -481,18 +481,24 @@ const dbService = {
 
 // Initialize express app
 const expressApp = express();
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // Middleware
 expressApp.use(cors());
 expressApp.use(express.json());
-expressApp.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Simple logging middleware
 expressApp.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
   next();
 });
+
+// Handle all other routes by serving index.html
+expressApp.get('*', (req, res) => { res.sendFile(path.join(__dirname, 'public', 'index.html')); });
 
 // Routes
 
