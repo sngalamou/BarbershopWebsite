@@ -1,0 +1,19 @@
+[build]
+  command = "npm install"
+  publish = "."
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "npm install"
+
+[dev]
+  command = "npm run start"
+  port = 3000
